@@ -8,4 +8,4 @@ s.sort()
 result = list(permutations(s,k))
 
 for string in result:
-    print(string[0]+string[1])
+    print("".join(string))
