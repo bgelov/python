@@ -1,0 +1,11 @@
+\d - any digit
+
+\D - any non-numeric value
+
+\s - whitespace character
+
+\S - all except whitespace characters
+
+\w - any letter, digit or underline character
+
+\W - all except letter, digit or underline character
