@@ -1,5 +1,8 @@
 import textwrap
 
+#textwrap examples:
+#https://www.tutorialspoint.com/python-text-wrapping-and-filling
+
 def wrap(string, max_width):
     result = textwrap.fill(string,max_width)
     return result

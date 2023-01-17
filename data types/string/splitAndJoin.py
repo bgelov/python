@@ -1,5 +1,4 @@
 def split_and_join(line):
-    # write your code here
     LineSplit = line.split(" ")
     LineJoin = "-".join(LineSplit)
     return LineJoin
