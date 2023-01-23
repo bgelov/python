@@ -1,6 +1,6 @@
 #https://www.hackerrank.com/challenges/validating-uid/problem
 import re
-from collections import Counter
+#https://docs.python.org/3/library/re.html
 
 T = int(input())
 
@@ -10,13 +10,16 @@ for i in range(T):
     
     #There must be exactly 10 characters in a valid UID.
     #It should only contain alphanumeric characters (a-z,A-Z&0-9).
-    checkAlNum = re.match(r'^[0-9a-zA-Z]{10}$', uid)
-    if not checkAlNum: checkStatus = "Invalid"
-    
     #No character should repeat.
-    checkCharCount = Counter(uid)
-    for char,count  in checkCharCount.items():
-        if (count > 1): checkStatus = "Invalid"
+    checkAlNum = re.match(r'^(?:([0-9a-zA-Z])(?!.*\1)){10}$', uid)
+    if not checkAlNum: checkStatus = "Invalid"
+        
+    #or use for check alnum and len:
+    #checkAlNum = re.match(r'^[0-9a-zA-Z]{10}$', uid)
+    #and No character should repeat with Counter (from collections import Counter)
+    #checkCharCount = Counter(uid)
+    #for char,count  in checkCharCount.items():
+    #    if (count > 1): checkStatus = "Invalid"
         
     #It must contain at least  digits (0-9).
     checkNumCount = re.findall('[0-9]', uid)
@@ -32,6 +35,7 @@ for i in range(T):
     #checkAZCount = re.match(r'^(.*?[A-Z]){2,}.*$', uid)
     #if not checkAZCount: checkStatus = "Invalid"
     
-    
+    #in one string all re rules: ^(?=(?:[a-z\d]*[A-Z]){2})(?=(?:\D*\d){3})(?:([a-zA-Z\d])(?!.*\1)){10}$
+
     print(checkStatus)
     
