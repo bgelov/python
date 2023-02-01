@@ -1,7 +1,12 @@
 
-A = np.array([input().split() for _ in range(n)], int)
+arr = np.array([input().split() for _ in range(n)], int)
+
+
+nm = list(map(int, input().split()))
+arr = np.array([input().split() for _ in range(nm[0])], int)
 
 
 
+nm = list(map(int, input().split()))
 A = np.array(input().split(), int)
 B = np.array(input().split(), int)
