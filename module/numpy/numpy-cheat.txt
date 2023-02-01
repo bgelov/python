@@ -1,2 +1,7 @@
 
 A = np.array([input().split() for _ in range(n)], int)
+
+
+
+A = np.array(input().split(), int)
+B = np.array(input().split(), int)
