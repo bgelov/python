@@ -1,0 +1,2 @@
+
+A = np.array([input().split() for _ in range(n)], int)
