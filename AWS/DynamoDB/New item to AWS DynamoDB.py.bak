@@ -1,0 +1,11 @@
+#New item to AWS DynamoDB
+
+def new_chat_id(chat_id, chat_admins, chat_autoreply, chat_whitelist):
+    response = table.put_item(
+        Item = {
+         "chat_id": chat_id,
+         "chat_admins": chat_admins,
+         "chat_autoreply": chat_autoreply,
+         "chat_whitelist": chat_whitelist
+        }
+    )
