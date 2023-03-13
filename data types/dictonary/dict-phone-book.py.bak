@@ -1,0 +1,18 @@
+# https://leetcode.com/problems/majority-element/description/
+# Oleg Belov
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        majors = {}
+        for num in nums:
+            if num not in majors:
+                majors[num] = 0
+            majors[num] += 1
+
+        major_count = 0
+        for key in majors:
+            if majors[key] > major_count:
+                major_count = majors[key]
+                result = key
+        
+        return result

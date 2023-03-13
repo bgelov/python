@@ -1,23 +1,17 @@
-# Multiset realization
+def majorityElement(nums: list[int]) -> int:
+    majors = {}
+    for num in nums:
+        if num not in majors:
+            majors[num] = 0
+        majors[num] += 1
 
-multiset_size = 10
-multiset = [[] for _ in range(multiset_size)]
+    major_count = 0
+    for key in majors:
+        if majors[key] > major_count:
+            major_count = majors[key]
+            result = key
+    
+    return result
 
-def add(x):
-    # if need set (not multiset), we can add here checker if x already in set
-    multiset[x % multiset_size].append(x)
-
-def find(x):
-    for now in multiset[x % multiset_size]:
-        if now == x:
-            return True
-    return False
-
-def delete(x):
-    list_with_x = multiset[x % multiset_size]
-    for i in range(len(list_with_x)):
-        if list_with_x[i] == x:
-            list_with_x[i] = list_with_x[len(list_with_x-1)]
-            list_with_x.pop()
-            return True
-
+nums = [2,5,5,5,5,6,3,5,3,2,6,6,7,4,8,5,5,5,2,1,1,1,2,2]
+print(majorityElement(nums))
