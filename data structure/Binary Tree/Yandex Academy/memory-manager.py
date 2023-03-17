@@ -19,7 +19,7 @@ def delnode(memstruct, index):
 
 
 def find(memstruct, root, x):
-    key = memstruct[0][root][o]
+    key = memstruct[0][root][0]
     if x == key:
         return root
     elif x < key:
